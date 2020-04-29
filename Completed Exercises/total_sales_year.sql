@@ -1,5 +1,3 @@
--- What are the respective total sales for each of those years?
--- The DATEPART() function returns a specified part of a date. This function returns the result as an integer value.
 -- The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
 
 --SELECT *
@@ -21,7 +19,5 @@ SELECT
 	SUM(Total) AS TotalSales
 FROM Invoice
 WHERE InvoiceDate LIKE '%2009%'
-OR InvoiceDate LIKE '%2010%'
 OR InvoiceDate LIKE '%2011%'
 GROUP BY DATEPART(year, InvoiceDate)
-

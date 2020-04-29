@@ -3,14 +3,14 @@
 -- The Track table has TrackId
 -- Use JOIN to connect 
 
-SELECT *
-FROM InvoiceLine
+--SELECT *
+--FROM InvoiceLine
 
-SELECT *
-FROM Track
+--SELECT *
+--FROM Track
 
 
-SELECT DISTINCT
+SELECT
 t.Name AS PurchasedTrackName, 
 il.*
 FROM InvoiceLine il

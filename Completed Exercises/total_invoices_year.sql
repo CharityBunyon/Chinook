@@ -1,8 +1,18 @@
 -- How many Invoices were there in 2009 and 2011?
 -- The COUNT() function returns the number of rows that matches a specified criteria.
+-- Use Union to comine the result of two select statements
+	
+--SELECT *
+--FROM Invoice
 
 
-SELECT
-	COUNT(InvoiceId) AS 'Number of 2009-2011 Invoices'
+SELECT COUNT(InvoiceId) as 'Invoices', YEAR(InvoiceDate) as 'Year'
 FROM Invoice
-WHERE InvoiceDate BETWEEN '2009-01-01 00:00:00.000' AND '2011-12-31 00:00:00.000'
+WHERE YEAR(InvoiceDate) = '2009'
+GROUP By YEAR(InvoiceDate) 
+UNION ALL
+SELECT COUNT(InvoiceId), YEAR(InvoiceDate) 
+FROM Invoice
+WHERE YEAR(InvoiceDate) = '2011'
+GROUP By YEAR(InvoiceDate) 
+  
