@@ -10,7 +10,7 @@
 --SELECT * 
 --FROM Artist
 
-SELECT DISTINCT 
+SELECT 
 	t.Name AS PurchasedTrackName,
 	a.Name AS ArtistName,
 	il.*
